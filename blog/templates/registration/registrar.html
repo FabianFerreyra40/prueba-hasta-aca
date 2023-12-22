@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<title>{% block title %} Registro de usuario {% endblock title %}</title>
+
+{% block contenido %}
+
+<center> 
+
+    <form method="POST" enctype="multipart/form-data" style="margin-top: 300xp; margin-bottom: 100xp;">
+        <h1 class="h1">Registro de usuario</h1>
+        <br>
+        <div class="messages">
+            {% for massage in messages %}
+                <table {% if message.tags %} class="{{ message.tag }}"{% endif %}>{{ messages }}</table>
+            {% endfor %}
+        </div>
+        <br>
+        {% csrf_token %}
+        <div class="container-fluid">
+            <table>{{ form }}</table>
+        </div>
+        <br><br>
+        <button type="submit" class="btn btn-success btn-lg px-3">Registrar</button>
+    
+    </form>
+
+</center>
+{% endblock %}
+
+    
+
+
+
+

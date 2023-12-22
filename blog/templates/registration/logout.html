@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<center>
+<div class="container" style="margin-top: 370xp;">
+    <div class="messages">
+        {% for massage in messages %}
+            <table {% if message.tags %} class="{{ message.tag}}"{% endif %}>{{ message }}</table>
+        {{% endfor %}}
+    </div>
+</div>
+</center>
+{% endblock %}
